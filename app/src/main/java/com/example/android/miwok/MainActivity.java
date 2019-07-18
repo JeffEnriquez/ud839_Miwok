@@ -15,21 +15,24 @@
  */
 package com.example.android.miwok;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
+import android.widget.Toast;
+
 
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
+
 
         // Find the View that shows the numbers category
         TextView numbers = (TextView) findViewById(R.id.numbers);
@@ -38,12 +41,12 @@ public class MainActivity extends AppCompatActivity {
         numbers.setOnClickListener(new OnClickListener() {
             // The code in this method will be executed when the numbers category is clicked on.
             @Override
-            public void onClick(View view) {
-                // Create a new intent to open the {@link NumbersActivity}
-                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
 
-                // Start the new activity
-                startActivity(numbersIntent);
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Open the list of numbers", Toast.LENGTH_SHORT).show();
+
+                // Start the new activity, opens the {@link NumbersActivity}
+                startActivity(new Intent(MainActivity.this, NumbersActivity.class));
             }
         });
 
@@ -55,11 +58,10 @@ public class MainActivity extends AppCompatActivity {
             // The code in this method will be executed when the family category is clicked on.
             @Override
             public void onClick(View view) {
-                // Create a new intent to open the {@link FamilyActivity}
-                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                Toast.makeText(view.getContext(), "Open the list of family members", Toast.LENGTH_SHORT).show();
 
-                // Start the new activity
-                startActivity(familyIntent);
+                // Start the new activity, opens the {@link FamilyActivity}
+                startActivity(new Intent(MainActivity.this, FamilyActivity.class));
             }
         });
 
@@ -72,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Create a new intent to open the {@link ColorsActivity}
-                Intent colorsIntent = new Intent(MainActivity.this, ColorsActivity.class);
+                Toast.makeText(view.getContext(), "Open the list of colors", Toast.LENGTH_SHORT).show();
 
-                // Start the new activity
-                startActivity(colorsIntent);
+                // Start the new activity, opens the {@link ColorsActivity}
+                startActivity(new Intent(MainActivity.this, ColorsActivity.class));
             }
         });
 
@@ -87,12 +89,12 @@ public class MainActivity extends AppCompatActivity {
             // The code in this method will be executed when the phrases category is clicked on.
             @Override
             public void onClick(View view) {
-                // Create a new intent to open the {@link PhrasesActivity}
-                Intent phrasesIntent = new Intent(MainActivity.this, PhrasesActivity.class);
+                Toast.makeText(view.getContext(), "Open the list of colors", Toast.LENGTH_SHORT).show();
 
-                // Start the new activity
-                startActivity(phrasesIntent);
+                // Start the new activity, opens the {@link PhrasesActivity}
+                startActivity(new Intent(MainActivity.this, PhrasesActivity.class));
             }
         });
     }
+
 }
