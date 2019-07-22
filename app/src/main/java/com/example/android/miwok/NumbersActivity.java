@@ -43,7 +43,7 @@ public class NumbersActivity extends AppCompatActivity {
         //simple_list_item_1 is defined in the Android framework
         WordAdapter itemsAdapter = new WordAdapter(this, words);
         //{@link ListView} declared in activity_numbers.xml
-        ListView listView = (ListView) findViewById(R.id.list);
+        ListView listView = (ListView) findViewById(R.id.numbersList);
 
         listView.setAdapter(itemsAdapter);
     }

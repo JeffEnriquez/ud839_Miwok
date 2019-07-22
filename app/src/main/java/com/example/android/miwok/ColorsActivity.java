@@ -26,5 +26,21 @@ public class ColorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_colors);
+        ArrayList<Word> words = new ArrayList<Word>();
+        words.add(new Word("red", "wetetti"));
+        words.add(new Word("green","chokokki"));
+        words.add(new Word("brown", "takaakki"));
+        words.add(new Word("gray", "oyytopoppiisa"));
+        words.add(new Word("black","kululli"));
+        words.add(new Word("white","kelelli"));
+        words.add(new Word("dusty yellow","topiise"));
+        words.add(new Word("mustard yellow","chiwiite"));
+
+        //simple_list_item_1 is defined in the Android framework
+        WordAdapter itemsAdapter = new WordAdapter(this, words);
+        //{@link ListView} declared in activity_numbers.xml
+        ListView listView = (ListView) findViewById(R.id.colorsList);
+
+        listView.setAdapter(itemsAdapter);
     }
 }
